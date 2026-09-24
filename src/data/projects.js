@@ -71,6 +71,35 @@
  */
 const projects = [
   {
+    title: 'Email Command Center',
+    category: 'Desktop Engineering',
+    problem: 'Managing two Gmail accounts and a calendar across browser tabs is a constant context switch. No lightweight desktop widget exists that aggregates multiple inboxes, auto-classifies emails, and lets you triage without leaving your workflow.',
+    decision: 'Build a frameless, always-on-top Electron widget that floats on the desktop — two Gmail accounts, Google Calendar, smart 4-layer AI classification, and right-click actions (archive, spam, re-categorize) — all in a 380×640px window that collapses to a hanging emoji badge.',
+    tags: ['Electron', 'Node.js', 'Google APIs', 'SQLite', 'Ollama', 'OAuth2', 'CSS'],
+    outcome: 'Shipped a 10-file, ~1600-line desktop widget handling 2 Gmail accounts + Calendar with a 4-layer classification pipeline (learned rules → sender patterns → local LLM → keyword fallback), encrypted token storage via Windows DPAPI, and desktop notifications.',
+    context: 'Personal productivity tool built in 2 sessions. Designed for daily use on Windows — sits in the corner of the screen, syncs every 30 minutes, collapses to a draggable emoji yo-yo when not in use. Built entirely in ponytail mode (shortest working diff, no over-engineering).',
+    business_question: 'Can a single floating widget replace the tab-switching workflow for managing multiple email accounts and surface what actually needs attention?',
+    data: 'Live Gmail and Google Calendar data via OAuth2 Desktop App flow. Emails stored in local SQLite (sql.js WASM). 25 sender-domain rules + optional Ollama (qwen3:4b) for AI classification.',
+    approach: '6-phase build: scaffold (Electron frameless window) → Gmail/Calendar integration (OAuth2, chunked fetch) → intelligence layer (4-tier classifier with learned rules as training mechanism) → in-widget actions (archive, spam, re-categorize via context menu) → notifications + theming (Pinterest light theme, scroll-snap panels) → packaging (VBS shortcut for Windows Home).',
+    insights: [
+      'The "learned rules" layer — saving sender→category mappings when the user re-categorizes — is a better training mechanism than fine-tuning for this scale. It\'s instant, deterministic, and exactly matches user intent.',
+      'sql.js (pure WASM SQLite) eliminates the native compilation dependency chain that better-sqlite3 requires — no node-gyp, no Python, no C++ toolchain. For ~200 emails the performance difference is invisible.',
+      'Token encryption via Electron safeStorage (Windows DPAPI) with transparent migration from plain JSON was a 15-line security upgrade that protects refresh tokens at rest.',
+    ],
+    recommendation: 'For personal productivity tools, the "floating widget" form factor — always visible, one-click collapse, right-click actions — is significantly faster than browser-based alternatives. The 4-layer classification approach (rules → patterns → LLM → fallback) degrades gracefully when Ollama is unavailable.',
+    validation: 'Full security audit covering shell.openExternal validation, accountId whitelist, SQL injection (parameterized queries), XSS prevention, and token encryption. Tested across both accounts with live Gmail data. Edge cases: null thread IDs, archived emails, disconnected accounts, Ollama unavailability.',
+    githubUrl: 'https://github.com/DhruvvKumar98/email-command-center',
+    artifacts: [
+      { label: 'GitHub', link: 'https://github.com/DhruvvKumar98/email-command-center' },
+    ],
+    skillsUsage: [
+      { name: 'Electron / Node.js', value: 35 },
+      { name: 'Google APIs / OAuth2', value: 25 },
+      { name: 'AI Classification', value: 20 },
+      { name: 'Security / Encryption', value: 20 },
+    ],
+  },
+  {
     title: 'Decision Ledger',
     category: 'Decision Intelligence',
     problem: 'Organisations make hundreds of strategic decisions per quarter but have no system for tracking them. When a product launch fails, there is no trail back to the assumptions that justified it. Decisions live in meeting notes, Slack threads, and the memories of people who may have already left.',
