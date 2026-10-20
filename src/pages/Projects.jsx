@@ -30,11 +30,13 @@ export default function Projects() {
           </button>
         ))}
       </div>
-      {/* Project grid — 2 columns, each card is a ProjectCard component */}
-      <div className="g-grid" style={{ gridTemplateColumns: 'repeat(2, 1fr)' }}>
-        {filtered.map(p => (
-          <ProjectCard key={p.title} project={p} onClick={() => setSelected(p)} />
-        ))}
+      {/* Project grid — 2 columns, Mac window chrome */}
+      <div className="mac-chrome">
+        <div className="g-grid" style={{ gridTemplateColumns: 'repeat(2, 1fr)', border: 'none' }}>
+          {filtered.map(p => (
+            <ProjectCard key={p.title} project={p} onClick={() => setSelected(p)} />
+          ))}
+        </div>
       </div>
       {/* Case study drawer — rendered by CaseStudy component */}
       <CaseStudy project={selected} onClose={() => setSelected(null)} />

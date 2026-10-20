@@ -30,10 +30,8 @@ export default function CaseStudy({ project, onClose }) {
             style={{ fontSize: 'var(--fs-h1)', marginTop: '0.5rem', marginBottom: '0.5rem' }}>
           {project.title}
         </h2>
-        {/* Scribble underline — colour from --c-gold */}
-        <svg height="6" viewBox="0 0 200 6" fill="none" style={{ marginBottom: '2rem' }}>
-          <path d="M1 4C50 1.5 120 1 199 3" stroke="var(--c-gold)" strokeWidth="2" strokeLinecap="round"/>
-        </svg>
+        {/* Pixel underline */}
+        <div style={{ width: '12rem', height: '3px', background: 'var(--c-gold)', marginBottom: '2rem' }} />
         {/* Live link if available */}
         {project.liveUrl && (
           <a href={project.liveUrl} target="_blank" rel="noopener noreferrer"

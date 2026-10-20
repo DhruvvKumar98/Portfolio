@@ -10,8 +10,10 @@ export default function Skills() {
           <h1 className="sec-title">Skills</h1>
         </div>
       </div>
-      <div className="g-grid reveal" style={{ gridTemplateColumns: 'repeat(2,1fr)', marginBottom: '4rem' }}>
-        {skills.map(g => <SkillGroup key={g.group} group={g} />)}
+      <div className="mac-chrome reveal" style={{ marginBottom: '4rem' }}>
+        <div className="g-grid" style={{ gridTemplateColumns: 'repeat(2,1fr)', border: 'none' }}>
+          {skills.map(g => <SkillGroup key={g.group} group={g} />)}
+        </div>
       </div>
       <div style={{ borderTop: 'var(--b-light)', paddingTop: '3rem' }} className="reveal d1">
         <div className="label" style={{ marginBottom: '1.5rem' }}>Languages</div>

@@ -22,10 +22,10 @@ export default function Home() {
               <span style={{ color: 'var(--c-gold)' }}>—</span>
               Kreuzberg, Berlin · Open to work
             </p>
-            {/* Stamp name — punk gold shadow. Disable in tokens.css: set --stamp-x and --stamp-y to 0px */}
+            {/* Stamp name — pixel blue shadow. Disable in tokens.css: set --stamp-x and --stamp-y to 0px */}
             <h1 className="font-display font-extrabold"
-                style={{ fontSize: 'var(--fs-hero)', letterSpacing: '-0.03em',
-                         lineHeight: 0.95, marginBottom: '1.5rem' }}>
+                style={{ fontSize: 'var(--fs-hero)', letterSpacing: '-0.02em',
+                         lineHeight: 1.1, marginBottom: '1.5rem' }}>
               {['Dhruv', 'Kumar'].map(word => (
                 <div key={word} className="stamp-wrap" style={{ display: 'block' }}>
                   <span className="stamp-front">{word}</span>
@@ -33,17 +33,15 @@ export default function Home() {
                 </div>
               ))}
             </h1>
-            {/* Tagline + hand-drawn underline */}
+            {/* Tagline + pixel underline */}
             <div style={{ marginBottom: '1.5rem' }}>
               <p className="font-display font-semibold text-muted" style={{ fontSize: 'var(--fs-h2)' }}>
                 {profile.title}
               </p>
-              <svg height="8" viewBox="0 0 380 8" fill="none" style={{ marginTop: '0.35rem', width: '100%', maxWidth: '22rem' }}>
-                <path d="M2 5.5C70 2 160 1 250 3.5C310 5.5 360 6 378 4"
-                      stroke="var(--c-gold)" strokeWidth="2.5" strokeLinecap="round"/>
-              </svg>
+              <div style={{ width: '100%', maxWidth: '22rem', height: '3px',
+                            background: 'var(--c-gold)', marginTop: '0.5rem' }} />
             </div>
-            <p className="text-muted leading-relaxed" style={{ maxWidth: '42ch', marginBottom: '2.5rem', fontWeight: 300 }}>
+            <p className="text-muted leading-relaxed" style={{ maxWidth: '42ch', marginBottom: '2.5rem' }}>
               {profile.intro}
             </p>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem' }}>
@@ -51,27 +49,24 @@ export default function Home() {
               <Btn href={profile.resumeUrl} variant="gold" download>Download CV</Btn>
             </div>
           </div>
-          {/* Photo + KPIs */}
+          {/* Photo in Mac window + KPIs */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
-            <div style={{ position: 'relative' }}>
+            <div className="mac-chrome" style={{ maxWidth: '22rem', margin: '0 auto' }}>
               <img src={profile.photo} alt="Dhruv Kumar"
-                style={{ width: '100%', maxWidth: '22rem', margin: '0 auto', display: 'block',
+                style={{ width: '100%', display: 'block',
                          aspectRatio: '3/4', objectFit: 'cover', objectPosition: 'top center',
-                         filter: 'grayscale(15%) contrast(1.05)',
-                         border: 'var(--b-light)' }} />
-              <div style={{ position: 'absolute', bottom: '-10px', right: '-10px', width: '52px', height: '52px',
-                            borderRight: '2px solid var(--c-gold)', borderBottom: '2px solid var(--c-gold)' }} />
-              <div style={{ position: 'absolute', top: '-10px', left: '-10px', width: '52px', height: '52px',
-                            borderLeft: '2px solid var(--c-gold)', borderTop: '2px solid var(--c-gold)' }} />
+                         filter: 'grayscale(30%) contrast(1.08)' }} />
             </div>
             {/* KPIs — values from src/data/kpis.js */}
-            <div className="g-grid" style={{ gridTemplateColumns: '1fr 1fr' }}>
-              {kpis.map((k, i) => (
-                <div key={i} style={{ padding: '1.25rem' }}>
-                  <div className="font-display font-bold text-ink" style={{ fontSize: '1.75rem' }}>{k.value}</div>
-                  <div className="label" style={{ color: 'var(--c-muted)', marginTop: '0.3rem' }}>{k.label}</div>
-                </div>
-              ))}
+            <div className="mac-chrome">
+              <div className="g-grid" style={{ gridTemplateColumns: '1fr 1fr', border: 'none' }}>
+                {kpis.map((k, i) => (
+                  <div key={i} style={{ padding: '1.25rem' }}>
+                    <div className="font-display font-bold text-ink" style={{ fontSize: '1.5rem' }}>{k.value}</div>
+                    <div className="label" style={{ color: 'var(--c-muted)', marginTop: '0.3rem' }}>{k.label}</div>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
@@ -89,32 +84,34 @@ export default function Home() {
               All projects →
             </Link>
           </div>
-          <div className="g-grid" style={{ gridTemplateColumns: 'repeat(3, 1fr)' }}>
-            {featured.map(p => (
-              <Link key={p.title} to="/projects"
-                style={{ padding: '2rem', display: 'flex', flexDirection: 'column',
-                         textDecoration: 'none', color: 'inherit',
-                         transition: 'background var(--t-base)' }}
-                onMouseEnter={e => e.currentTarget.style.background = 'var(--c-paper-2)'}
-                onMouseLeave={e => e.currentTarget.style.background = 'var(--c-paper)'}>
-                <span className="label" style={{ marginBottom: '1rem' }}>{p.category}</span>
-                <h3 className="font-display font-bold text-ink leading-tight"
-                    style={{ fontSize: 'var(--fs-h2)', marginBottom: '0.75rem' }}>
-                  {p.title}
-                </h3>
-                <p className="text-muted leading-relaxed flex-1"
-                   style={{ fontSize: 'var(--fs-sm)', fontWeight: 300, marginBottom: '1.5rem' }}>
-                  {p.outcome.substring(0, 120)}...
-                </p>
-                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.3rem' }}>
-                  {p.tags.slice(0, 3).map(t => <span key={t} className="tag">{t}</span>)}
-                </div>
-              </Link>
-            ))}
+          <div className="mac-chrome">
+            <div className="g-grid" style={{ gridTemplateColumns: 'repeat(3, 1fr)', border: 'none' }}>
+              {featured.map(p => (
+                <Link key={p.title} to="/projects"
+                  style={{ padding: '2rem', display: 'flex', flexDirection: 'column',
+                           textDecoration: 'none', color: 'inherit',
+                           transition: 'background var(--t-base)' }}
+                  onMouseEnter={e => e.currentTarget.style.background = 'var(--c-paper-2)'}
+                  onMouseLeave={e => e.currentTarget.style.background = 'var(--c-paper)'}>
+                  <span className="label" style={{ marginBottom: '1rem' }}>{p.category}</span>
+                  <h3 className="font-display font-bold text-ink leading-tight"
+                      style={{ fontSize: 'var(--fs-h2)', marginBottom: '0.75rem' }}>
+                    {p.title}
+                  </h3>
+                  <p className="text-muted leading-relaxed flex-1"
+                     style={{ fontSize: 'var(--fs-sm)', marginBottom: '1.5rem' }}>
+                    {p.outcome.substring(0, 120)}...
+                  </p>
+                  <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.3rem' }}>
+                    {p.tags.slice(0, 3).map(t => <span key={t} className="tag">{t}</span>)}
+                  </div>
+                </Link>
+              ))}
+            </div>
           </div>
         </div>
       </section>
-      {/* ── EXPERIENCE STRIP (dark) ───────────────────────── */}
+      {/* ── EXPERIENCE STRIP (blue) ───────────────────────── */}
       <section className="section reveal" style={{ background: 'var(--c-ink-2)' }}>
         <div className="section-inner">
           <div className="sec-header dark">
@@ -128,20 +125,22 @@ export default function Home() {
               Full timeline →
             </Link>
           </div>
-          <div className="g-grid-dark" style={{ gridTemplateColumns: '1fr 1fr' }}>
-            {experiences.slice(0, 4).map((exp, i) => (
-              <div key={i} style={{ padding: '2rem' }}>
-                <div className="label" style={{ marginBottom: '0.5rem' }}>{exp.dates}</div>
-                <div className="font-display font-semibold" style={{ color: 'var(--c-ink)',
-                     fontSize: 'var(--fs-h2)', marginBottom: '0.35rem' }}>{exp.role}</div>
-                <div className="font-mono text-muted" style={{ fontSize: 'var(--fs-xs)', marginBottom: '1rem' }}>
-                  {exp.company}
+          <div className="mac-chrome-blue">
+            <div className="g-grid-dark" style={{ gridTemplateColumns: '1fr 1fr', border: 'none' }}>
+              {experiences.slice(0, 4).map((exp, i) => (
+                <div key={i} style={{ padding: '2rem' }}>
+                  <div className="label" style={{ marginBottom: '0.5rem' }}>{exp.dates}</div>
+                  <div className="font-display font-semibold" style={{ color: 'var(--c-ink)',
+                       fontSize: 'var(--fs-h2)', marginBottom: '0.35rem' }}>{exp.role}</div>
+                  <div className="font-mono text-muted" style={{ fontSize: 'var(--fs-xs)', marginBottom: '1rem' }}>
+                    {exp.company}
+                  </div>
+                  <p style={{ fontSize: 'var(--fs-sm)', color: 'var(--c-muted)', lineHeight: 1.65 }}>
+                    {exp.impactSummary}
+                  </p>
                 </div>
-                <p style={{ fontSize: 'var(--fs-sm)', color: 'var(--c-muted)', fontWeight: 300, lineHeight: 1.65 }}>
-                  {exp.impactSummary}
-                </p>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -150,7 +149,7 @@ export default function Home() {
         <div className="section-inner">
           <blockquote style={{ maxWidth: '48rem' }}>
             <p className="font-display font-semibold text-ink leading-tight"
-               style={{ fontSize: 'clamp(1.5rem, 3vw, 2.5rem)', marginBottom: '1.5rem' }}>
+               style={{ fontSize: 'clamp(0.85rem, 1.8vw, 1.25rem)', marginBottom: '1.5rem' }}>
               "{profile.valueStatement}"
             </p>
             <footer className="font-mono text-muted"

@@ -30,7 +30,8 @@ export default function Contact() {
             Job Seeker Visa (§20 AufenthG). Let's talk.
           </p>
         </div>
-        <div className="g-grid">
+        <div className="mac-chrome">
+          <div className="g-grid" style={{ border: 'none' }}>
           {LINKS.map(link => (
             <div key={link.label} style={{ display: 'flex', justifyContent: 'space-between',
                                            alignItems: 'center', padding: '1.1rem 1.25rem' }}>
@@ -54,6 +55,7 @@ export default function Contact() {
               )}
             </div>
           ))}
+          </div>
         </div>
       </div>
     </div>

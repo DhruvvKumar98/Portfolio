@@ -9,38 +9,40 @@
 ║  Change a value here → changes everywhere instantly.         ║
 ╚══════════════════════════════════════════════════════════════╝
 */
-@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=DM+Mono:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap');
 :root {
   /* ── COLOURS ──────────────────────────────────────────────
      To repaint the whole site: edit only these 10 lines.
-     Current palette: midnight charcoal + soft white + sage mint accent.
+     Current palette: retro Macintosh — warm cream + pixel blue.
      ──────────────────────────────────────────────────────── */
-  --c-ink:      #e8ecf2;   /* body text, primary headers */
-  --c-ink-2:    #161a24;   /* dark section backgrounds   */
-  --c-ink-3:    #1e2230;   /* dark card backgrounds      */
-  --c-paper:    #0c0f18;   /* main page background       */
-  --c-paper-2:  #141824;   /* hover background           */
-  --c-paper-3:  #252a38;   /* borders, dividers          */
-  --c-gold:     #64d8a8;   /* accent: links, tags, lines */
-  --c-gold-2:   #8ae8c4;   /* accent hover state         */
-  --c-muted:    #8892a8;   /* secondary text             */
-  --c-faint:    #5c6478;   /* tertiary text              */
+  --c-ink:      #1a1a1a;   /* body text, primary headers     */
+  --c-ink-2:    #c8ddf0;   /* alt-section bg (Mac blue)       */
+  --c-ink-3:    #b0c8e0;   /* alt-section card bg             */
+  --c-paper:    #f5f0e6;   /* main page background (cream)    */
+  --c-paper-2:  #ece5d8;   /* hover background                */
+  --c-paper-3:  #1a1a1a;   /* borders, dividers (black)       */
+  --c-gold:     #0055cc;   /* accent: links, tags, lines      */
+  --c-gold-2:   #0044aa;   /* accent hover state              */
+  --c-muted:    #555555;   /* secondary text                  */
+  --c-faint:    #999999;   /* tertiary text                   */
   /* ── FONTS ────────────────────────────────────────────────
      To swap fonts:
      1. Change the family name below
      2. Update the @import URL above with the new Google Font
      ──────────────────────────────────────────────────────── */
-  --f-display: 'Syne', sans-serif;      /* hero name, page titles, card titles */
-  --f-body:    'DM Sans', sans-serif;   /* paragraphs, descriptions            */
-  --f-mono:    'DM Mono', monospace;    /* labels, tags, nav, captions         */
-  /* ── TYPE SCALE ───────────────────────────────────────────*/
-  --fs-hero: clamp(3.5rem, 9vw, 6.5rem);
-  --fs-h1:   clamp(2rem, 4vw, 2.75rem);
-  --fs-h2:   1.35rem;
-  --fs-body: 0.95rem;
-  --fs-sm:   0.83rem;
-  --fs-xs:   0.68rem;
-  --fs-tag:  0.62rem;
+  --f-display: 'Press Start 2P', monospace;  /* pixel font for hero + headings */
+  --f-body:    'Space Mono', monospace;      /* clean mono body text           */
+  --f-mono:    'Space Mono', monospace;      /* labels, tags, nav, captions    */
+  /* ── TYPE SCALE ───────────────────────────────────────────
+     Sizes reduced — pixel fonts run wider than proportional.
+     ─────────────────────────────────────────────────────── */
+  --fs-hero: clamp(2rem, 5vw, 3.5rem);
+  --fs-h1:   clamp(1.1rem, 2.2vw, 1.5rem);
+  --fs-h2:   0.75rem;
+  --fs-body: 0.88rem;
+  --fs-sm:   0.78rem;
+  --fs-xs:   0.62rem;
+  --fs-tag:  0.55rem;
   /* ── SPACING SCALE ────────────────────────────────────────*/
   --sp-2:   0.5rem;
   --sp-4:   1rem;
@@ -56,25 +58,24 @@
   --pad-x:     2.5rem;
   --pad-y:     var(--sp-24);
   /* ── BORDERS ──────────────────────────────────────────────*/
-  --b-light:  1px solid var(--c-paper-3);
-  --b-dark:   1px solid var(--c-ink-3);
-  --b-gold:   1px solid var(--c-gold);
-  --radius:   0px;    /* 0 = sharp/punk. Change to 6px for soft rounded. */
+  --b-light:  2px solid var(--c-paper-3);
+  --b-dark:   2px solid var(--c-ink-3);
+  --b-gold:   2px solid var(--c-gold);
+  --radius:   0px;    /* 0 = sharp pixel corners. */
   /* ── TRANSITIONS ──────────────────────────────────────────*/
   --ease:  cubic-bezier(0.16, 1, 0.3, 1);
   --t-fast: 0.15s var(--ease);
   --t-base: 0.25s var(--ease);
-  /* ── PUNK STAMP EFFECT ────────────────────────────────────
-     The gold shadow offset on the hero name.
+  /* ── PIXEL STAMP EFFECT ───────────────────────────────────
+     Blue shadow offset on the hero name (retro CRT feel).
      Set both to 0px to disable completely.
      ──────────────────────────────────────────────────────── */
-  --stamp-x: 4px;
-  --stamp-y: 5px;
+  --stamp-x: 3px;
+  --stamp-y: 3px;
   /* ── GRAIN TEXTURE ────────────────────────────────────────
-     Subtle noise overlay on the whole page.
-     Set to 0 to remove it entirely.
+     Set to 0 — retro screens are clean, no noise.
      ──────────────────────────────────────────────────────── */
-  --noise: 0.35;
+  --noise: 0;
 }
 /* Mobile overrides */
 @media (max-width: 640px) {

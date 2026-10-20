@@ -21,7 +21,8 @@ export default function Hobbies() {
         </span>
       </div>
 
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '1px', background: 'var(--c-paper-3)' }}>
+      <div className="mac-chrome">
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '2px', background: 'var(--c-paper-3)' }}>
 
         {/* Berlin counter — wide */}
         <div style={{
@@ -198,6 +199,7 @@ export default function Hobbies() {
           </div>
         </div>
 
+      </div>
       </div>
 
       <style>{`

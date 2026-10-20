@@ -11,13 +11,15 @@ export default function Experience() {
         </div>
       </div>
       {/* Real KPIs — from src/data/kpis.js. No computed fake numbers. */}
-      <div className="g-grid reveal" style={{ gridTemplateColumns: 'repeat(4,1fr)', marginBottom: '4rem' }}>
-        {kpis.map((k, i) => (
-          <div key={i} style={{ padding: '1.5rem' }}>
-            <div className="font-display font-bold text-ink" style={{ fontSize: '2rem' }}>{k.value}</div>
-            <div className="label" style={{ color: 'var(--c-muted)', marginTop: '0.5rem' }}>{k.label}</div>
-          </div>
-        ))}
+      <div className="mac-chrome reveal" style={{ marginBottom: '4rem' }}>
+        <div className="g-grid" style={{ gridTemplateColumns: 'repeat(4,1fr)', border: 'none' }}>
+          {kpis.map((k, i) => (
+            <div key={i} style={{ padding: '1.5rem' }}>
+              <div className="font-display font-bold text-ink" style={{ fontSize: '1.5rem' }}>{k.value}</div>
+              <div className="label" style={{ color: 'var(--c-muted)', marginTop: '0.5rem' }}>{k.label}</div>
+            </div>
+          ))}
+        </div>
       </div>
       {/* Full experience list — each entry is an ExperienceRow component */}
       <div>
