@@ -3,9 +3,9 @@ import profile from '../data/profile.js';
 import kpis from '../data/kpis.js';
 import projects from '../data/projects.js';
 import experiences from '../data/experience.js';
+import building from '../data/building.js';
 import Btn from '../components/Btn.jsx';
-// ← To change which projects appear on the home page: edit this array
-const FEATURED = ['Return Radar', 'Decision Ledger', 'Cohort Retention Simulator'];
+const FEATURED = ['Email Command Center', 'Decision Ledger', 'Return Radar'];
 export default function Home() {
   const featured = projects.filter(p => FEATURED.includes(p.title));
   return (
@@ -13,7 +13,7 @@ export default function Home() {
       {/* ── HERO ─────────────────────────────────────────── */}
       <section style={{ minHeight: '95vh', display: 'flex', alignItems: 'flex-end',
                         padding: '5rem var(--pad-x) 4rem' }}>
-        <div style={{ maxWidth: 'var(--max-w)', margin: '0 auto', width: '100%',
+        <div className="hero-grid" style={{ maxWidth: 'var(--max-w)', margin: '0 auto', width: '100%',
                       display: 'grid', gridTemplateColumns: '1fr 1fr',
                       gap: '5rem', alignItems: 'end' }}>
           <div>
@@ -137,6 +137,41 @@ export default function Home() {
                   </div>
                   <p style={{ fontSize: 'var(--fs-sm)', color: 'var(--c-muted)', lineHeight: 1.65 }}>
                     {exp.impactSummary}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+      {/* ── CURRENTLY BUILDING ──────────────────────────────── */}
+      <section className="section reveal">
+        <div className="section-inner">
+          <div className="sec-header">
+            <div style={{ display: 'flex', alignItems: 'baseline', gap: '1rem' }}>
+              <span className="sec-num">03</span>
+              <h2 className="sec-title">Currently Building</h2>
+            </div>
+            <Link to="/building" className="font-mono text-muted hover:text-gold transition-colors"
+                  style={{ fontSize: 'var(--fs-xs)', letterSpacing: '0.1em', textTransform: 'uppercase' }}>
+              All projects →
+            </Link>
+          </div>
+          <div className="mac-chrome">
+            <div className="g-grid" style={{ gridTemplateColumns: 'repeat(2, 1fr)', border: 'none' }}>
+              {building.slice(0, 2).map((proj, i) => (
+                <div key={i} style={{ padding: '2rem', transition: 'background var(--t-base)' }}
+                     onMouseEnter={e => e.currentTarget.style.background = 'var(--c-paper-2)'}
+                     onMouseLeave={e => e.currentTarget.style.background = 'var(--c-paper)'}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.75rem' }}>
+                    <span className="label">{proj.title}</span>
+                    <span className="font-mono" style={{ fontSize: 'var(--fs-tag)', color: proj.status === 'shipped' ? 'var(--c-gold)' : 'var(--c-muted)', display: 'flex', alignItems: 'center', gap: '4px' }}>
+                      <span style={{ width: '5px', height: '5px', background: proj.status === 'shipped' ? 'var(--c-gold)' : 'var(--c-muted)', display: 'inline-block' }} />
+                      {proj.status === 'shipped' ? 'Shipped' : 'Building'}
+                    </span>
+                  </div>
+                  <p className="text-muted leading-relaxed" style={{ fontSize: 'var(--fs-sm)', fontWeight: 300 }}>
+                    {proj.description}
                   </p>
                 </div>
               ))}

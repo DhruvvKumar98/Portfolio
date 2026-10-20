@@ -104,3 +104,19 @@ body {
 .d1 { transition-delay: 0.1s; }
 .d2 { transition-delay: 0.2s; }
 .d3 { transition-delay: 0.3s; }
+.d4 { transition-delay: 0.4s; }
+/* Hover lift for interactive cards */
+.card-hover { transition: transform 0.2s var(--ease), box-shadow 0.2s var(--ease); }
+.card-hover:hover { transform: translateY(-2px); box-shadow: 4px 4px 0 var(--c-paper-3); }
+/* Status dot pulse */
+@keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+/* Responsive: stack grids on mobile */
+@media (max-width: 768px) {
+  .g-grid, .g-grid-dark { grid-template-columns: 1fr !important; }
+  .page { padding-left: 16px; padding-right: 16px; }
+  .hero-grid { grid-template-columns: 1fr !important; gap: 2rem !important; }
+  .contact-grid { grid-template-columns: 1fr !important; gap: 2rem !important; }
+  .bento-grid { grid-template-columns: 1fr 1fr !important; }
+  .bento-grid > * { grid-column: auto !important; grid-row: auto !important; }
+  .building-toward { grid-template-columns: 1fr !important; }
+}

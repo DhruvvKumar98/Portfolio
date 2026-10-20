@@ -22,7 +22,7 @@ export default function Hobbies() {
       </div>
 
       <div className="mac-chrome">
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '2px', background: 'var(--c-paper-3)' }}>
+      <div className="bento-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '2px', background: 'var(--c-paper-3)' }}>
 
         {/* Berlin counter — wide */}
         <div style={{
@@ -136,7 +136,7 @@ export default function Hobbies() {
           </div>
         </div>
 
-        {/* Nature */}
+        {/* AI Ethics & Enablement */}
         <div style={{
           background: 'var(--c-paper)',
           padding: '28px',
@@ -146,15 +146,70 @@ export default function Hobbies() {
           onMouseEnter={e => { e.currentTarget.style.background = 'var(--c-paper-2)'; }}
           onMouseLeave={e => { e.currentTarget.style.background = 'var(--c-paper)'; }}
         >
-          <div className="label" style={{ marginBottom: '12px' }}>Movement</div>
-          <div style={{ fontSize: '28px', marginBottom: '10px' }}>🌿</div>
-          <div className="font-display font-semibold text-ink" style={{ fontSize: 'var(--fs-h2)', marginBottom: '6px' }}>Nature & outdoors</div>
-          <div className="text-muted" style={{ fontSize: 'var(--fs-sm)', fontWeight: 300 }}>Always moving. Head resets outside.</div>
+          <div className="label" style={{ marginBottom: '12px' }}>Conviction</div>
+          <div style={{ fontSize: '28px', marginBottom: '10px' }}>🤖</div>
+          <div className="font-display font-semibold text-ink" style={{ fontSize: 'var(--fs-h2)', marginBottom: '6px' }}>AI Ethics & Enablement</div>
+          <div className="text-muted" style={{ fontSize: 'var(--fs-sm)', fontWeight: 300, lineHeight: 1.65 }}>AI should augment, not replace. Every brief I get is really about process clarity first.</div>
+        </div>
+
+        {/* German learning — wide */}
+        <div style={{
+          gridColumn: 'span 2',
+          background: 'var(--c-ink-2)',
+          padding: '28px',
+          cursor: 'default',
+          transition: 'background var(--t-base)',
+        }}
+          onMouseEnter={e => { e.currentTarget.style.background = 'var(--c-ink-3)'; }}
+          onMouseLeave={e => { e.currentTarget.style.background = 'var(--c-ink-2)'; }}
+        >
+          <div className="label" style={{ marginBottom: '12px' }}>Language</div>
+          <div className="font-display font-semibold" style={{ fontSize: 'var(--fs-h2)', color: 'var(--c-ink)', marginBottom: '8px' }}>German B1 → B2</div>
+          <div style={{ fontSize: 'var(--fs-sm)', color: 'var(--c-muted)', fontWeight: 300, lineHeight: 1.65 }}>
+            Learning German shapes how you think about directness, bureaucracy, and what "professional" means in a culture that books appointments to have coffee. Advancing to B2, one Anmeldung at a time.
+          </div>
+          <div style={{ display: 'flex', gap: '4px', marginTop: '12px' }}>
+            {['B1','→','B2'].map((s,i) => (
+              <span key={i} className="font-display font-bold" style={{ fontSize: '0.65rem', color: i === 2 ? 'var(--c-gold)' : 'var(--c-muted)' }}>{s}</span>
+            ))}
+          </div>
+        </div>
+
+        {/* Semiconductors */}
+        <div style={{
+          background: 'var(--c-paper)',
+          padding: '28px',
+          cursor: 'default',
+          transition: 'background var(--t-base)',
+        }}
+          onMouseEnter={e => { e.currentTarget.style.background = 'var(--c-paper-2)'; }}
+          onMouseLeave={e => { e.currentTarget.style.background = 'var(--c-paper)'; }}
+        >
+          <div className="label" style={{ marginBottom: '12px' }}>Nerd interest</div>
+          <div style={{ fontSize: '28px', marginBottom: '10px' }}>⚡</div>
+          <div className="font-display font-semibold text-ink" style={{ fontSize: 'var(--fs-h2)', marginBottom: '6px' }}>Semiconductors</div>
+          <div className="text-muted" style={{ fontSize: 'var(--fs-sm)', fontWeight: 300 }}>SME chips, fab economics, the geopolitics of silicon. Endlessly fascinating supply chains.</div>
+        </div>
+
+        {/* Cyberdecks */}
+        <div style={{
+          background: 'var(--c-paper)',
+          padding: '28px',
+          cursor: 'default',
+          transition: 'background var(--t-base)',
+        }}
+          onMouseEnter={e => { e.currentTarget.style.background = 'var(--c-paper-2)'; }}
+          onMouseLeave={e => { e.currentTarget.style.background = 'var(--c-paper)'; }}
+        >
+          <div className="label" style={{ marginBottom: '12px' }}>Aesthetic</div>
+          <div style={{ fontSize: '28px', marginBottom: '10px' }}>💻</div>
+          <div className="font-display font-semibold text-ink" style={{ fontSize: 'var(--fs-h2)', marginBottom: '6px' }}>Cyberdecks</div>
+          <div className="text-muted" style={{ fontSize: 'var(--fs-sm)', fontWeight: 300 }}>Custom portable computers, retro-future design. The intersection of function and personality.</div>
         </div>
 
         {/* Gratitude — wide */}
         <div style={{
-          gridColumn: 'span 3',
+          gridColumn: 'span 2',
           background: 'var(--c-paper)',
           padding: '28px',
           cursor: 'default',
@@ -178,7 +233,7 @@ export default function Hobbies() {
           cursor: 'default',
         }}>
           <div className="label" style={{ marginBottom: '16px' }}>What I'm building toward</div>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.8fr 1.8fr', gap: '2.5rem', alignItems: 'start' }}>
+          <div className="building-toward" style={{ display: 'grid', gridTemplateColumns: '1fr 1.8fr 1.8fr', gap: '2.5rem', alignItems: 'start' }}>
             <div>
               <div className="font-display font-semibold" style={{ fontSize: 'var(--fs-h2)', color: 'var(--c-ink)', lineHeight: 1.3, marginBottom: '10px' }}>
                 Creator.<br/>Researcher.<br/>Problem finder.

@@ -17,6 +17,8 @@ export default function Nav() {
     { to: '/projects',   label: 'Projects'   },
     { to: '/skills',     label: 'Skills'     },
     { to: '/hobbies',    label: 'Human'      },
+    { to: '/writing',    label: 'Writing'    },
+    { to: '/building',   label: 'Building'   },
     { to: '/contact',    label: 'Contact'    },
   ];
   const linkBase = 'font-mono text-xs tracking-widest uppercase transition-colors';

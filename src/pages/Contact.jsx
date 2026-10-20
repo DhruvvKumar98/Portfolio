@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import profile from '../data/profile.js';
-// ← To add a contact method: add one object to this array
+import Btn from '../components/Btn.jsx';
 const LINKS = [
   { label: 'Email',     value: 'dhruvvkumar98@gmail.com',             href: `mailto:${profile.links?.email}`, copy: true },
   { label: 'LinkedIn',  value: 'linkedin.com/in/dhruv-kumar-a54a2916b', href: profile.links?.linkedin },
@@ -19,16 +19,20 @@ export default function Contact() {
           <h1 className="sec-title">Contact</h1>
         </div>
       </div>
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', marginBottom: '3rem' }}>
+      <div className="contact-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', marginBottom: '3rem' }}>
         <div>
           <p className="font-display font-semibold text-ink leading-tight"
              style={{ fontSize: 'var(--fs-h1)', marginBottom: '1rem' }}>
             Open to BA and DA roles at Berlin companies.
           </p>
-          <p className="text-muted leading-relaxed" style={{ fontSize: 'var(--fs-sm)', fontWeight: 300 }}>
+          <p className="text-muted leading-relaxed" style={{ fontSize: 'var(--fs-sm)', fontWeight: 300, marginBottom: '2rem' }}>
             Available immediately. German B1 → B2.
             Job Seeker Visa (§20 AufenthG). Let's talk.
           </p>
+          <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
+            <Btn href={profile.resumeUrl} variant="gold" download>Download CV</Btn>
+            <Btn href="/resume">View Resume</Btn>
+          </div>
         </div>
         <div className="mac-chrome">
           <div className="g-grid" style={{ border: 'none' }}>

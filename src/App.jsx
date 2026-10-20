@@ -1,6 +1,7 @@
 import { Routes, Route } from 'react-router-dom';
 import { useEffect } from 'react';
 import Nav from './components/Nav.jsx';
+import Footer from './components/Footer.jsx';
 import routes from './routes.jsx';
 export default function App() {
   // Global scroll reveal — works automatically on every page
@@ -25,6 +26,7 @@ export default function App() {
           ))}
         </Routes>
       </main>
+      <Footer />
     </div>
   );
 }

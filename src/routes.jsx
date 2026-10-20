@@ -10,6 +10,8 @@ import Skills     from './pages/Skills.jsx';
 import Resume     from './pages/Resume.jsx';
 import Contact    from './pages/Contact.jsx';
 import Hobbies    from './pages/Hobbies.jsx';
+import Writing    from './pages/Writing.jsx';
+import Building   from './pages/Building.jsx';
 export default [
   { path: '/',           component: Home       },
   { path: '/experience', component: Experience },
@@ -18,4 +20,6 @@ export default [
   { path: '/resume',     component: Resume     },
   { path: '/contact',    component: Contact    },
   { path: '/hobbies',    component: Hobbies    },
+  { path: '/writing',    component: Writing    },
+  { path: '/building',   component: Building   },
 ];
