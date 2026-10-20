@@ -16,7 +16,7 @@ export default function Home() {
         <div className="hero-grid" style={{ maxWidth: 'var(--max-w)', margin: '0 auto', width: '100%',
                       display: 'grid', gridTemplateColumns: '1fr 1fr',
                       gap: '5rem', alignItems: 'end' }}>
-          <div>
+          <div className="hero-stagger">
             <p className="label" style={{ color: 'var(--c-muted)', marginBottom: '1.5rem',
                                           display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
               <span style={{ color: 'var(--c-gold)' }}>—</span>
@@ -35,7 +35,7 @@ export default function Home() {
             </h1>
             {/* Tagline + pixel underline */}
             <div style={{ marginBottom: '1.5rem' }}>
-              <p className="font-display font-semibold text-muted" style={{ fontSize: 'var(--fs-h2)' }}>
+              <p className="font-display font-semibold text-muted typing-cursor" style={{ fontSize: 'var(--fs-h2)' }}>
                 {profile.title}
               </p>
               <div style={{ width: '100%', maxWidth: '22rem', height: '3px',
