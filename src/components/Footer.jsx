@@ -3,37 +3,35 @@ import profile from '../data/profile.js';
 export default function Footer() {
   return (
     <footer style={{
-      borderTop: '2px solid var(--c-paper-3)',
-      padding: '2.5rem var(--pad-x)',
-      marginTop: '4rem',
+      borderTop: '1px solid var(--c-paper-3)',
+      padding: '2rem var(--pad-x)',
+      marginTop: '2rem',
     }}>
       <div style={{ maxWidth: 'var(--max-w)', margin: '0 auto',
-                    display: 'flex', justifyContent: 'space-between', alignItems: 'center',
-                    flexWrap: 'wrap', gap: '1rem' }}>
-        <div>
-          <span className="font-display font-bold text-ink" style={{ fontSize: 'var(--fs-h2)' }}>
-            {profile.name.split(' ').slice(0, 2).join(' ')}
-          </span>
-          <span className="font-mono text-faint" style={{ fontSize: 'var(--fs-xs)', marginLeft: '1rem' }}>
-            Built with pixels and persistence
-          </span>
-        </div>
+        display: 'flex', justifyContent: 'space-between', alignItems: 'center',
+        flexWrap: 'wrap', gap: '1rem' }}>
+        <span style={{ fontFamily: 'var(--f-mono)', fontSize: 'var(--fs-xs)', color: 'var(--c-faint)' }}>
+          Berlin, {new Date().getFullYear()}
+        </span>
         <div style={{ display: 'flex', gap: '1.5rem' }}>
-          <a href={profile.links.github} target="_blank" rel="noopener noreferrer"
-             className="font-mono text-muted hover:text-gold transition-colors"
-             style={{ fontSize: 'var(--fs-xs)', letterSpacing: '0.1em', textTransform: 'uppercase' }}>
-            GitHub
-          </a>
-          <a href={profile.links.linkedin} target="_blank" rel="noopener noreferrer"
-             className="font-mono text-muted hover:text-gold transition-colors"
-             style={{ fontSize: 'var(--fs-xs)', letterSpacing: '0.1em', textTransform: 'uppercase' }}>
-            LinkedIn
-          </a>
-          <a href={`mailto:${profile.links.email}`}
-             className="font-mono text-muted hover:text-gold transition-colors"
-             style={{ fontSize: 'var(--fs-xs)', letterSpacing: '0.1em', textTransform: 'uppercase' }}>
-            Email
-          </a>
+          {[
+            { label: 'GitHub', href: profile.links.github },
+            { label: 'LinkedIn', href: profile.links.linkedin },
+            { label: 'Email', href: `mailto:${profile.links.email}` },
+          ].map(l => (
+            <a key={l.label} href={l.href}
+              target={l.href.startsWith('mailto') ? undefined : '_blank'}
+              rel={l.href.startsWith('mailto') ? undefined : 'noopener noreferrer'}
+              style={{
+                fontFamily: 'var(--f-mono)', fontSize: 'var(--fs-xs)',
+                color: 'var(--c-muted)', textDecoration: 'none',
+                transition: 'color 0.15s var(--ease)',
+              }}
+              onMouseEnter={e => { e.currentTarget.style.color = 'var(--c-gold)'; }}
+              onMouseLeave={e => { e.currentTarget.style.color = 'var(--c-muted)'; }}>
+              {l.label}
+            </a>
+          ))}
         </div>
       </div>
     </footer>

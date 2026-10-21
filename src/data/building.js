@@ -23,7 +23,7 @@ const building = [
   {
     title: 'This Portfolio',
     status: 'in-progress',
-    description: 'Retro Mac pixel-art aesthetic. React + Vite + Tailwind. Continuously improving — you are looking at it right now.',
+    description: 'Single-page scroll portfolio. React + Vite + Tailwind. Continuously improving — you are looking at it right now.',
     tags: ['React', 'Vite', 'Tailwind CSS'],
     repo: 'https://github.com/DhruvvKumar98/Portfolio',
   },

@@ -19,6 +19,11 @@ export default {
         display: ['var(--f-display)'],
         mono:    ['var(--f-mono)'],
       },
+      borderRadius: {
+        DEFAULT: 'var(--radius)',
+        sm: 'var(--radius-sm)',
+        lg: 'var(--radius-lg)',
+      },
     },
   },
   plugins: [],

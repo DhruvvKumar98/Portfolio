@@ -4,13 +4,14 @@ import Nav from './components/Nav.jsx';
 import Footer from './components/Footer.jsx';
 import routes from './routes.jsx';
 export default function App() {
-  // Global scroll reveal — works automatically on every page
   useEffect(() => {
     const obs = new IntersectionObserver(
       entries => entries.forEach(e => e.isIntersecting && e.target.classList.add('visible')),
       { threshold: 0.08, rootMargin: '0px 0px -40px 0px' }
     );
-    const attach = () => document.querySelectorAll('.reveal:not(.visible)').forEach(el => obs.observe(el));
+    const attach = () => {
+      document.querySelectorAll('.reveal:not(.visible)').forEach(el => obs.observe(el));
+    };
     attach();
     const mo = new MutationObserver(attach);
     mo.observe(document.body, { childList: true, subtree: true });
