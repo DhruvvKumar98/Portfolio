@@ -130,28 +130,32 @@ main { animation: pageIn 0.4s var(--ease-out) both; }
 }
 .project-img-reveal.visible { opacity: 1; }
 
-/* Bouncing items container */
+/* Bouncing stickers container */
 .bounce-arena {
-  position: relative; width: 100%; height: 400px;
+  position: relative; width: 100%; height: 420px;
   overflow: hidden; border-radius: var(--radius-lg);
-  background: linear-gradient(135deg, #fef9ef 0%, #f0f4ff 50%, #fdf2f8 100%);
+  background: linear-gradient(135deg, #fdf0e2 0%, #fce4c4 40%, #f5ddb8 100%);
+  border: 1.5px solid #e8c896;
 }
-.bounce-item {
+.bounce-sticker {
   position: absolute; cursor: default; user-select: none;
-  display: flex; align-items: center; gap: 0.5rem;
-  padding: 0.55rem 1.1rem; border-radius: 999px;
-  border: 1.5px solid var(--c-paper-3);
-  box-shadow: 0 2px 10px rgba(0,0,0,0.06);
-  font-family: var(--f-body); font-size: var(--fs-sm);
-  white-space: nowrap;
-  transition: transform 0.2s var(--ease), box-shadow 0.2s var(--ease);
-  backdrop-filter: blur(4px);
+  filter: drop-shadow(3px 3px 0px rgba(0,0,0,0.25));
+  transition: transform 0.2s var(--ease);
 }
-.bounce-item:hover {
-  transform: scale(1.12);
-  box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+.bounce-sticker:hover {
+  transform: scale(1.2) !important;
+  filter: drop-shadow(4px 4px 0px rgba(0,0,0,0.35));
   z-index: 10;
 }
+.bounce-sticker svg { display: block; }
+.sticker-tooltip {
+  position: absolute; bottom: -26px; left: 50%; transform: translateX(-50%);
+  background: #1a1a1a; color: #fff; padding: 3px 10px; border-radius: 6px;
+  font-family: var(--f-body); font-size: var(--fs-xs); font-weight: 500;
+  white-space: nowrap; opacity: 0; pointer-events: none;
+  transition: opacity 0.15s ease-out;
+}
+.bounce-sticker:hover .sticker-tooltip { opacity: 1; }
 
 /* Terminal contact */
 .terminal {

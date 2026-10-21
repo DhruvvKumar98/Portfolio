@@ -11,16 +11,16 @@ const VIBE_TAGS = [
 ];
 
 const HUMAN_ITEMS = [
-  { label: 'Berlin', icon: '🌆', bg: '#dbeafe', border: '#93c5fd' },
-  { label: 'German B1→B2', icon: '🇩🇪', bg: '#fef3c7', border: '#fcd34d' },
-  { label: 'ADHD energy', icon: '✨', bg: '#ffedd5', border: '#fdba74' },
-  { label: 'M.Sc. Data Science', icon: '🔬', bg: '#ede9fe', border: '#c4b5fd' },
-  { label: 'Manga', icon: '🎌', bg: '#ffe4e6', border: '#fda4af' },
-  { label: 'Cyberdecks', icon: '🛠️', bg: '#e0e7ff', border: '#a5b4fc' },
-  { label: 'AI ethics', icon: '🧠', bg: '#fce7f3', border: '#f9a8d4' },
-  { label: 'Semiconductors', icon: '⚙️', bg: '#d1fae5', border: '#6ee7b7' },
-  { label: 'Coffee addict', icon: '☕', bg: '#fef3c7', border: '#fbbf24' },
-  { label: 'Night owl', icon: '🌙', bg: '#e0e7ff', border: '#818cf8' },
+  { label: 'Berlin', rot: -5, svg: `<svg width="70" height="90" viewBox="0 0 70 90" fill="none"><rect x="2" y="2" width="66" height="86" rx="6" fill="#FF6B35" stroke="#1a1a1a" stroke-width="3"/><line x1="35" y1="82" x2="35" y2="35" stroke="#fff" stroke-width="5" stroke-linecap="round"/><circle cx="35" cy="32" r="10" fill="#fff" stroke="#1a1a1a" stroke-width="2"/><circle cx="35" cy="32" r="5" fill="#FF6B35"/><line x1="35" y1="22" x2="35" y2="10" stroke="#fff" stroke-width="3" stroke-linecap="round"/><line x1="28" y1="82" x2="42" y2="82" stroke="#fff" stroke-width="4" stroke-linecap="round"/><rect x="30" y="45" width="10" height="3" rx="1" fill="rgba(255,255,255,0.5)"/><rect x="30" y="52" width="10" height="3" rx="1" fill="rgba(255,255,255,0.5)"/></svg>` },
+  { label: 'German B1→B2', rot: 3, svg: `<svg width="80" height="65" viewBox="0 0 80 65" fill="none"><rect x="2" y="2" width="76" height="61" rx="6" fill="#1a1a1a" stroke="#1a1a1a" stroke-width="3"/><rect x="5" y="5" width="70" height="18" rx="3" fill="#1a1a1a"/><rect x="5" y="23" width="70" height="18" fill="#DD0000"/><rect x="5" y="41" width="70" height="18" rx="3" fill="#FFCC00"/><text x="40" y="38" text-anchor="middle" fill="#fff" font-family="'Permanent Marker',cursive" font-size="18" opacity="0.9">B2!</text><circle cx="65" cy="12" r="6" fill="#2ED573" stroke="#1a1a1a" stroke-width="2"/></svg>` },
+  { label: 'ADHD energy', rot: -2, svg: `<svg width="80" height="80" viewBox="0 0 80 80" fill="none"><circle cx="40" cy="40" r="36" fill="#FF1493" stroke="#1a1a1a" stroke-width="3"/><path d="M25 35Q30 20 40 28Q50 20 55 35Q60 45 50 50Q45 58 40 55Q35 58 30 50Q20 45 25 35Z" fill="#fff" stroke="#1a1a1a" stroke-width="1.5"/><path d="M35 38L32 30L38 34Z" fill="#FF1493"/><path d="M45 38L48 30L42 34Z" fill="#FF1493"/><path d="M60 15L65 8L58 12Z" fill="#FFD700" stroke="#1a1a1a" stroke-width="1"/><path d="M18 18L13 10L20 15Z" fill="#FFD700" stroke="#1a1a1a" stroke-width="1"/><path d="M65 60L70 55L63 57Z" fill="#FFD700" stroke="#1a1a1a" stroke-width="1"/><line x1="12" y1="40" x2="6" y2="38" stroke="#FFD700" stroke-width="2" stroke-linecap="round"/><line x1="68" y1="40" x2="74" y2="38" stroke="#FFD700" stroke-width="2" stroke-linecap="round"/><path d="M33 45Q37 50 40 46Q43 50 47 45" stroke="#1a1a1a" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>` },
+  { label: 'M.Sc. Data Science', rot: 4, svg: `<svg width="75" height="75" viewBox="0 0 75 75" fill="none"><rect x="2" y="2" width="71" height="71" rx="8" fill="#7B2FF7" stroke="#1a1a1a" stroke-width="3"/><rect x="15" y="50" width="10" height="15" rx="2" fill="#fff" opacity="0.9"/><rect x="28" y="35" width="10" height="30" rx="2" fill="#fff" opacity="0.9"/><rect x="41" y="25" width="10" height="40" rx="2" fill="#FFD700"/><rect x="54" y="15" width="10" height="50" rx="2" fill="#2ED573"/><path d="M18 48L33 32L46 22L59 12" stroke="#FF1493" stroke-width="2.5" stroke-linecap="round" fill="none"/><circle cx="59" cy="12" r="3" fill="#FF1493"/></svg>` },
+  { label: 'Manga', rot: -6, svg: `<svg width="80" height="75" viewBox="0 0 80 75" fill="none"><rect x="2" y="2" width="76" height="71" rx="8" fill="#FF4757" stroke="#1a1a1a" stroke-width="3"/><ellipse cx="40" cy="35" rx="22" ry="18" fill="#fff" stroke="#1a1a1a" stroke-width="2"/><ellipse cx="40" cy="33" rx="12" ry="13" fill="#1a1a1a"/><ellipse cx="42" cy="30" rx="5" ry="6" fill="#fff"/><ellipse cx="36" cy="36" rx="2" ry="2.5" fill="#fff" opacity="0.7"/><path d="M20 55Q30 65 40 58Q50 65 60 55" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round"/><line x1="58" y1="20" x2="68" y2="10" stroke="#FFD700" stroke-width="3" stroke-linecap="round"/><line x1="62" y1="24" x2="72" y2="14" stroke="#FFD700" stroke-width="3" stroke-linecap="round"/></svg>` },
+  { label: 'Cyberdecks', rot: 2, svg: `<svg width="85" height="65" viewBox="0 0 85 65" fill="none"><rect x="2" y="2" width="81" height="61" rx="6" fill="#00D2FF" stroke="#1a1a1a" stroke-width="3"/><rect x="12" y="10" width="40" height="28" rx="3" fill="#1a1a1a"/><rect x="14" y="12" width="36" height="24" rx="2" fill="#0a3d0a"/><text x="32" y="28" text-anchor="middle" fill="#2ED573" font-family="monospace" font-size="10">&gt;_</text><rect x="12" y="42" width="8" height="6" rx="1" fill="#1a1a1a"/><rect x="22" y="42" width="8" height="6" rx="1" fill="#1a1a1a"/><rect x="32" y="42" width="8" height="6" rx="1" fill="#1a1a1a"/><rect x="42" y="42" width="8" height="6" rx="1" fill="#1a1a1a"/><rect x="12" y="50" width="18" height="5" rx="1" fill="#1a1a1a"/><rect x="32" y="50" width="18" height="5" rx="1" fill="#1a1a1a"/><line x1="60" y1="15" x2="75" y2="15" stroke="#1a1a1a" stroke-width="2"/><line x1="60" y1="22" x2="72" y2="22" stroke="#1a1a1a" stroke-width="2"/><line x1="60" y1="29" x2="78" y2="29" stroke="#1a1a1a" stroke-width="2"/><circle cx="62" cy="45" r="4" fill="#FF1493" stroke="#1a1a1a" stroke-width="1.5"/><circle cx="73" cy="45" r="4" fill="#FFD700" stroke="#1a1a1a" stroke-width="1.5"/></svg>` },
+  { label: 'AI ethics', rot: -3, svg: `<svg width="75" height="80" viewBox="0 0 75 80" fill="none"><rect x="2" y="2" width="71" height="76" rx="8" fill="#2ED573" stroke="#1a1a1a" stroke-width="3"/><path d="M22 30Q25 15 37 22Q45 12 53 22Q60 15 58 30Q62 40 52 45Q48 52 37 48Q26 52 22 45Q15 40 22 30Z" fill="#fff" stroke="#1a1a1a" stroke-width="2"/><line x1="37" y1="48" x2="37" y2="58" stroke="#1a1a1a" stroke-width="2.5"/><line x1="25" y1="58" x2="49" y2="58" stroke="#1a1a1a" stroke-width="2.5" stroke-linecap="round"/><line x1="25" y1="58" x2="20" y2="68" stroke="#1a1a1a" stroke-width="2"/><line x1="49" y1="58" x2="54" y2="68" stroke="#1a1a1a" stroke-width="2"/><circle cx="18" cy="70" r="5" fill="#FFD700" stroke="#1a1a1a" stroke-width="1.5"/><circle cx="56" cy="70" r="5" fill="#FF4757" stroke="#1a1a1a" stroke-width="1.5"/><circle cx="30" cy="30" r="2" fill="#1a1a1a"/><circle cx="44" cy="30" r="2" fill="#1a1a1a"/></svg>` },
+  { label: 'Semiconductors', rot: 5, svg: `<svg width="75" height="75" viewBox="0 0 75 75" fill="none"><rect x="2" y="2" width="71" height="71" rx="8" fill="#1E90FF" stroke="#1a1a1a" stroke-width="3"/><rect x="20" y="20" width="35" height="35" rx="3" fill="#1a1a1a"/><rect x="23" y="23" width="29" height="29" rx="2" fill="#2a2a4a"/><rect x="30" y="30" width="15" height="15" rx="1" fill="#FFD700" opacity="0.8"/><line x1="25" y1="17" x2="25" y2="10" stroke="#fff" stroke-width="2"/><line x1="33" y1="17" x2="33" y2="10" stroke="#fff" stroke-width="2"/><line x1="41" y1="17" x2="41" y2="10" stroke="#fff" stroke-width="2"/><line x1="49" y1="17" x2="49" y2="10" stroke="#fff" stroke-width="2"/><line x1="25" y1="58" x2="25" y2="65" stroke="#fff" stroke-width="2"/><line x1="33" y1="58" x2="33" y2="65" stroke="#fff" stroke-width="2"/><line x1="41" y1="58" x2="41" y2="65" stroke="#fff" stroke-width="2"/><line x1="49" y1="58" x2="49" y2="65" stroke="#fff" stroke-width="2"/><line x1="17" y1="25" x2="10" y2="25" stroke="#fff" stroke-width="2"/><line x1="17" y1="33" x2="10" y2="33" stroke="#fff" stroke-width="2"/><line x1="17" y1="41" x2="10" y2="41" stroke="#fff" stroke-width="2"/><line x1="17" y1="49" x2="10" y2="49" stroke="#fff" stroke-width="2"/><line x1="58" y1="25" x2="65" y2="25" stroke="#fff" stroke-width="2"/><line x1="58" y1="33" x2="65" y2="33" stroke="#fff" stroke-width="2"/><line x1="58" y1="41" x2="65" y2="41" stroke="#fff" stroke-width="2"/><line x1="58" y1="49" x2="65" y2="49" stroke="#fff" stroke-width="2"/></svg>` },
+  { label: 'Coffee addict', rot: -4, svg: `<svg width="65" height="80" viewBox="0 0 65 80" fill="none"><rect x="2" y="2" width="61" height="76" rx="8" fill="#8B4513" stroke="#1a1a1a" stroke-width="3"/><rect x="12" y="30" width="30" height="35" rx="4" fill="#fff" stroke="#1a1a1a" stroke-width="2"/><path d="M42 38Q52 38 52 48Q52 58 42 58" stroke="#fff" stroke-width="3" fill="none"/><ellipse cx="27" cy="32" rx="14" ry="4" fill="#6B3410"/><path d="M20 20Q22 12 24 20" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round"/><path d="M27 18Q29 8 31 18" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round"/><path d="M34 20Q36 12 38 20" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round"/></svg>` },
+  { label: 'Night owl', rot: 3, svg: `<svg width="75" height="80" viewBox="0 0 75 80" fill="none"><rect x="2" y="2" width="71" height="76" rx="8" fill="#2C2C54" stroke="#1a1a1a" stroke-width="3"/><ellipse cx="37" cy="42" rx="20" ry="22" fill="#8B6914"/><circle cx="28" cy="35" r="9" fill="#fff" stroke="#1a1a1a" stroke-width="2"/><circle cx="46" cy="35" r="9" fill="#fff" stroke="#1a1a1a" stroke-width="2"/><circle cx="28" cy="35" r="5" fill="#1a1a1a"/><circle cx="46" cy="35" r="5" fill="#1a1a1a"/><circle cx="30" cy="33" r="2" fill="#fff"/><circle cx="48" cy="33" r="2" fill="#fff"/><path d="M34 45L37 50L40 45" fill="#FFD700" stroke="#1a1a1a" stroke-width="1.5"/><path d="M15 25L22 30L18 22Z" fill="#8B6914"/><path d="M59 25L52 30L56 22Z" fill="#8B6914"/><circle cx="12" cy="12" r="3" fill="#FFD700"/><circle cx="60" cy="8" r="2" fill="#FFD700"/><circle cx="55" cy="18" r="1.5" fill="#FFD700" opacity="0.6"/></svg>` },
 ];
 
 const PHOTOS = [
@@ -449,7 +449,7 @@ function WritingQuotes() {
   );
 }
 
-/* ── HUMAN — bouncing scatter ─────────────────────────── */
+/* ── HUMAN — bouncing sticker scatter ────────────────── */
 function HumanBounce() {
   const arenaRef = useRef(null);
   const itemsRef = useRef([]);
@@ -463,22 +463,27 @@ function HumanBounce() {
     const W = rect.width;
     const H = rect.height;
 
-    itemsRef.current = HUMAN_ITEMS.map(() => ({
-      x: Math.random() * (W - 140),
-      y: Math.random() * (H - 40),
-      vx: (0.3 + Math.random() * 0.6) * (Math.random() > 0.5 ? 1 : -1),
-      vy: (0.3 + Math.random() * 0.6) * (Math.random() > 0.5 ? 1 : -1),
-    }));
+    const cols = 5, rows = 2;
+    itemsRef.current = HUMAN_ITEMS.map((_, idx) => {
+      const col = idx % cols, row = Math.floor(idx / cols);
+      const cellW = (W - 90) / cols, cellH = (H - 90) / rows;
+      return {
+        x: col * cellW + Math.random() * cellW * 0.5 + 10,
+        y: row * cellH + Math.random() * cellH * 0.5 + 10,
+        vx: (0.3 + Math.random() * 0.5) * (Math.random() > 0.5 ? 1 : -1),
+        vy: (0.3 + Math.random() * 0.5) * (Math.random() > 0.5 ? 1 : -1),
+      };
+    });
 
     const animate = () => {
       if (!pausedRef.current) {
         const items = itemsRef.current;
-        const els = arena.querySelectorAll('.bounce-item');
+        const els = arena.querySelectorAll('.bounce-sticker');
         items.forEach((item, i) => {
           item.x += item.vx;
           item.y += item.vy;
-          const elW = els[i]?.offsetWidth || 140;
-          const elH = els[i]?.offsetHeight || 36;
+          const elW = els[i]?.offsetWidth || 80;
+          const elH = els[i]?.offsetHeight || 80;
           if (item.x <= 0 || item.x >= W - elW) item.vx *= -1;
           if (item.y <= 0 || item.y >= H - elH) item.vy *= -1;
           item.x = Math.max(0, Math.min(W - elW, item.x));
@@ -506,12 +511,10 @@ function HumanBounce() {
           onMouseEnter={() => { pausedRef.current = true; }}
           onMouseLeave={() => { pausedRef.current = false; }}>
           {HUMAN_ITEMS.map((item, i) => (
-            <div key={i} className="bounce-item" style={{
-              background: item.bg || 'var(--c-paper)',
-              borderColor: item.border || 'var(--c-paper-3)',
-            }}>
-              <span style={{ fontSize: '1.3rem' }}>{item.icon}</span>
-              <span style={{ fontWeight: 500 }}>{item.label}</span>
+            <div key={i} className="bounce-sticker"
+              style={{ transform: `rotate(${item.rot}deg)` }}>
+              <div dangerouslySetInnerHTML={{ __html: item.svg }} />
+              <span className="sticker-tooltip">{item.label}</span>
             </div>
           ))}
         </div>
