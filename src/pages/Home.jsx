@@ -303,14 +303,23 @@ function PhotoMarquee() {
 /* ── EXPERIENCE — horizontal scroll cards + detail modal ── */
 function ExperienceScroll() {
   const [open, setOpen] = useState(null);
+  const scrollRef = useRef(null);
+  const scroll = (dir) => {
+    scrollRef.current?.scrollBy({ left: dir * 360, behavior: 'smooth' });
+  };
   return (
     <section id="experience" className="section reveal">
       <div className="section-inner">
-        <h2 style={{ fontFamily: 'var(--f-display)', fontSize: 'var(--fs-h1)',
-          marginBottom: 'var(--sp-8)' }}>
-          Experience
-        </h2>
-        <div className="hscroll">
+        <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', marginBottom: 'var(--sp-8)' }}>
+          <h2 style={{ fontFamily: 'var(--f-display)', fontSize: 'var(--fs-h1)' }}>
+            Experience
+          </h2>
+          <div style={{ display: 'flex', gap: '0.5rem' }}>
+            <button onClick={() => scroll(-1)} className="scroll-arrow" aria-label="Scroll left">←</button>
+            <button onClick={() => scroll(1)} className="scroll-arrow" aria-label="Scroll right">→</button>
+          </div>
+        </div>
+        <div className="hscroll" ref={scrollRef}>
           {experiences.map((exp, i) => (
             <div key={i} onClick={() => setOpen(i)} style={{
               width: '340px', padding: '2rem', borderRadius: 'var(--radius)',

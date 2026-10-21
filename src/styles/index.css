@@ -111,6 +111,16 @@ main { animation: pageIn 0.4s var(--ease-out) both; }
 .section-dot.active { background: var(--c-gold); transform: scale(1.3); }
 .section-dot:hover { background: var(--c-muted); }
 
+/* Scroll arrows */
+.scroll-arrow {
+  width: 36px; height: 36px; border-radius: 50%;
+  border: 1.5px solid var(--c-paper-3); background: var(--c-paper);
+  font-size: 1rem; cursor: pointer; color: var(--c-ink);
+  display: flex; align-items: center; justify-content: center;
+  transition: all var(--t-base);
+}
+.scroll-arrow:hover { border-color: var(--c-gold); color: var(--c-gold); }
+
 /* Horizontal scroll snap */
 .hscroll {
   display: flex; gap: 1.25rem; overflow-x: auto;
