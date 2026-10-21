@@ -28,6 +28,8 @@ const PHOTOS = [
   { alt: 'Train ride through Germany', src: '/Portfolio/photos/train-ride.jpg' },
   { alt: 'Class gathering', src: '/Portfolio/photos/class-gathering.jpg' },
   { alt: 'Berlin canal sunset', src: '/Portfolio/photos/canal-sunset.jpg' },
+  { alt: 'Museum gallery', src: '/Portfolio/photos/museum-gallery.jpg' },
+  { alt: 'Coffee on the U-Bahn', src: '/Portfolio/photos/ubahn-coffee.jpg' },
 ];
 
 const SECTION_IDS = ['hero', 'projects', 'photos', 'experience', 'status', 'writing', 'human', 'contact'];
@@ -131,33 +133,39 @@ function Hero() {
   );
 }
 
+const HERO_PHOTOS = [
+  { src: '/Portfolio/photos/amsterdam-balcony.jpg', alt: 'Amsterdam', pos: 'center 20%' },
+  { src: '/Portfolio/photos/sunglasses-wall.jpg', alt: 'Goofy', pos: 'center 15%' },
+  { src: '/Portfolio/Profile.JPG', alt: 'Dhruv Kumar', pos: 'top center' },
+];
+
 function PhotoStack() {
   const [hovered, setHovered] = useState(false);
+  const fan = [
+    { rot: 0, tx: 0, z: 3 },
+    { rot: hovered ? -8 : -3, tx: hovered ? -24 : 0, z: 2 },
+    { rot: hovered ? 6 : 2, tx: hovered ? 20 : 0, z: 1 },
+  ];
   return (
     <div style={{ position: 'relative', width: '100%', maxWidth: '340px', aspectRatio: '3/4',
       margin: '0 auto', cursor: 'pointer' }}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}>
-      {[2, 1].map(i => (
+      {HERO_PHOTOS.map((photo, i) => (
         <div key={i} style={{
-          position: 'absolute', inset: 0, borderRadius: 'var(--radius-lg)',
-          border: '1px solid var(--c-paper-3)', background: 'var(--c-paper-2)',
-          transform: hovered
-            ? `rotate(${i === 2 ? -8 : 5}deg) translateX(${i === 2 ? -20 : 15}px)`
-            : `rotate(${i === 2 ? -3 : 2}deg)`,
+          position: i === 0 ? 'relative' : 'absolute', inset: i === 0 ? undefined : 0,
+          width: '100%', height: i === 0 ? '100%' : undefined,
+          borderRadius: 'var(--radius-lg)', overflow: 'hidden',
+          border: '1px solid var(--c-paper-3)',
+          transform: `rotate(${fan[i].rot}deg) translateX(${fan[i].tx}px)`,
           transition: 'transform 0.4s var(--ease-out)',
-          zIndex: i,
-        }} />
+          zIndex: fan[i].z,
+        }}>
+          <img src={photo.src} alt={photo.alt}
+            style={{ width: '100%', height: '100%', objectFit: 'cover',
+              objectPosition: photo.pos, filter: 'grayscale(15%) contrast(1.05)' }} />
+        </div>
       ))}
-      <div style={{
-        position: 'relative', zIndex: 3, width: '100%', height: '100%',
-        borderRadius: 'var(--radius-lg)', overflow: 'hidden',
-        border: '1px solid var(--c-paper-3)',
-      }}>
-        <img src={profile.photo} alt="Dhruv Kumar"
-          style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top center',
-            filter: 'grayscale(15%) contrast(1.05)' }} />
-      </div>
     </div>
   );
 }
