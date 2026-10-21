@@ -12,7 +12,7 @@ const writing = [
     date: '2026-09',
     excerpt: 'Ideation is not a phase before the real work. It is the real work. Finding the right problem, framing it for a non-technical operator — that is where the time goes.',
     tags: ['Business Analysis', 'Process'],
-    url: '#',
+    url: 'https://www.linkedin.com/in/dhruv-kumar-a54a2916b/recent-activity/articles/',
     source: 'LinkedIn',
   },
   {
@@ -20,7 +20,7 @@ const writing = [
     date: '2026-08',
     excerpt: 'Every "we want AI" brief I have received was really about process clarity. The AI conversation is often the first time a team maps their own workflow.',
     tags: ['AI Ethics', 'Consulting'],
-    url: '#',
+    url: 'https://www.linkedin.com/in/dhruv-kumar-a54a2916b/recent-activity/articles/',
     source: 'LinkedIn',
   },
   {
