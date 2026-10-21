@@ -11,21 +11,21 @@ const VIBE_TAGS = [
 ];
 
 const HUMAN_ITEMS = [
-  { label: 'Berlin', icon: '🗼' },
-  { label: 'German B1→B2', icon: '🇩🇪' },
-  { label: 'ADHD energy', icon: '⚡' },
-  { label: 'M.Sc. Data Science', icon: '🎓' },
-  { label: 'Manga', icon: '📖' },
-  { label: 'Cyberdecks', icon: '🔧' },
-  { label: 'AI ethics', icon: '🤖' },
-  { label: 'Semiconductors', icon: '💻' },
-  { label: 'Coffee addict', icon: '☕' },
-  { label: 'Night owl', icon: '🦉' },
+  { label: 'Berlin', icon: '🌆', bg: '#dbeafe', border: '#93c5fd' },
+  { label: 'German B1→B2', icon: '🇩🇪', bg: '#fef3c7', border: '#fcd34d' },
+  { label: 'ADHD energy', icon: '✨', bg: '#ffedd5', border: '#fdba74' },
+  { label: 'M.Sc. Data Science', icon: '🔬', bg: '#ede9fe', border: '#c4b5fd' },
+  { label: 'Manga', icon: '🎌', bg: '#ffe4e6', border: '#fda4af' },
+  { label: 'Cyberdecks', icon: '🛠️', bg: '#e0e7ff', border: '#a5b4fc' },
+  { label: 'AI ethics', icon: '🧠', bg: '#fce7f3', border: '#f9a8d4' },
+  { label: 'Semiconductors', icon: '⚙️', bg: '#d1fae5', border: '#6ee7b7' },
+  { label: 'Coffee addict', icon: '☕', bg: '#fef3c7', border: '#fbbf24' },
+  { label: 'Night owl', icon: '🌙', bg: '#e0e7ff', border: '#818cf8' },
 ];
 
 const PHOTOS = [
   { alt: 'Berlin sunset', src: '/Portfolio/photos/berlin-sunset.jpg' },
-  { alt: 'Späti night in Berlin', src: '/Portfolio/photos/spaeti-night.jpg' },
+  { alt: 'Park day in Berlin', src: '/Portfolio/photos/park-polaroid.jpg' },
   { alt: 'Train ride through Germany', src: '/Portfolio/photos/train-ride.jpg' },
   { alt: 'Class gathering', src: '/Portfolio/photos/class-gathering.jpg' },
   { alt: 'Berlin canal sunset', src: '/Portfolio/photos/canal-sunset.jpg' },
@@ -506,9 +506,12 @@ function HumanBounce() {
           onMouseEnter={() => { pausedRef.current = true; }}
           onMouseLeave={() => { pausedRef.current = false; }}>
           {HUMAN_ITEMS.map((item, i) => (
-            <div key={i} className="bounce-item">
-              <span style={{ fontSize: '1.2rem' }}>{item.icon}</span>
-              <span>{item.label}</span>
+            <div key={i} className="bounce-item" style={{
+              background: item.bg || 'var(--c-paper)',
+              borderColor: item.border || 'var(--c-paper-3)',
+            }}>
+              <span style={{ fontSize: '1.3rem' }}>{item.icon}</span>
+              <span style={{ fontWeight: 500 }}>{item.label}</span>
             </div>
           ))}
         </div>
