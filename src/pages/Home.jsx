@@ -25,11 +25,9 @@ const HUMAN_ITEMS = [
 
 const PHOTOS = [
   { alt: 'Berlin sunset', src: '/Portfolio/photos/berlin-sunset.jpg' },
-  { alt: 'Park day in Berlin', src: '/Portfolio/photos/park-polaroid.jpg' },
   { alt: 'Train ride through Germany', src: '/Portfolio/photos/train-ride.jpg' },
   { alt: 'Class gathering', src: '/Portfolio/photos/class-gathering.jpg' },
   { alt: 'Berlin canal sunset', src: '/Portfolio/photos/canal-sunset.jpg' },
-  { alt: 'Night out', src: '/Portfolio/photos/night-out.jpg' },
 ];
 
 const SECTION_IDS = ['hero', 'projects', 'photos', 'experience', 'status', 'writing', 'human', 'contact'];
@@ -282,6 +280,11 @@ function PhotoMarquee() {
   const doubled = [...PHOTOS, ...PHOTOS];
   return (
     <section id="photos" style={{ padding: 'var(--sp-8) 0', overflow: 'hidden' }}>
+      <p style={{
+        fontFamily: 'var(--f-mono)', fontSize: 'var(--fs-xs)', color: 'var(--c-faint)',
+        textTransform: 'uppercase', letterSpacing: '0.15em',
+        maxWidth: 'var(--max-w)', margin: '0 auto var(--sp-4)', padding: '0 var(--pad-x)',
+      }}>Behind the desk</p>
       <div className="marquee-track">
         {doubled.map((p, i) => (
           <div key={i} style={{
