@@ -71,7 +71,6 @@ const skills = [
       'Time Series Forecasting',
       'Predictive Modelling',
       'Prompt Engineering',
-      'Apache Kafka',
       'Apache Airflow',
       'GCP / BigQuery',
     ],

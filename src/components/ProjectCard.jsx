@@ -57,12 +57,14 @@ export default function ProjectCard({ project, onClick }) {
             Try it ↗
           </a>
         )}
-        <a href={project.githubUrl} target="_blank" rel="noopener noreferrer"
-           onClick={e => e.stopPropagation()}
-           className="btn btn-ink"
-           style={{ fontSize: 'var(--fs-tag)', padding: '0.5rem 1rem', letterSpacing: '0.1em' }}>
-          View code ↗
-        </a>
+        {project.githubUrl && (
+          <a href={project.githubUrl} target="_blank" rel="noopener noreferrer"
+             onClick={e => e.stopPropagation()}
+             className="btn btn-ink"
+             style={{ fontSize: 'var(--fs-tag)', padding: '0.5rem 1rem', letterSpacing: '0.1em' }}>
+            View code ↗
+          </a>
+        )}
       </div>
       {/* Tech tags */}
       <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.3rem' }}>
