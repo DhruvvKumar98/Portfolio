@@ -30,7 +30,7 @@ export default function Contact() {
             Job Seeker Visa (§20 AufenthG). Let's talk.
           </p>
           <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
-            <Btn href={profile.resumeUrl} variant="gold" download>Download CV</Btn>
+            <Btn href={profile.resumeUrl} variant="gold" download="Dhruv_Kumar_Boothu_CV.pdf">Download CV</Btn>
             <Btn href="/resume">View Resume</Btn>
           </div>
         </div>

@@ -124,7 +124,7 @@ function Hero() {
           </div>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.75rem' }}>
             <a href="#projects" className="btn btn-ink">View work</a>
-            <a href={profile.resumeUrl} className="btn btn-gold" download>Download CV</a>
+            <a href={profile.resumeUrl} className="btn btn-gold" download="Dhruv_Kumar_Boothu_CV.pdf">Download CV</a>
           </div>
         </div>
         <PhotoStack />
@@ -365,7 +365,7 @@ function ExperienceScroll() {
             <p style={{ fontFamily: 'var(--f-mono)', fontSize: 'var(--fs-sm)', color: 'var(--c-gold)' }}>
               Want the full story?
             </p>
-            <a href={profile.resumeUrl} className="btn btn-gold" download>Download CV</a>
+            <a href={profile.resumeUrl} className="btn btn-gold" download="Dhruv_Kumar_Boothu_CV.pdf">Download CV</a>
           </div>
         </div>
       </div>
@@ -626,8 +626,8 @@ function ContactTerminal() {
             <p>  <span className="key">"github"</span>: <a href={profile.links.github}
               target="_blank" rel="noopener noreferrer">
               <span className="str">"DhruvvKumar98"</span></a>,</p>
-            <p>  <span className="key">"resume"</span>: <a href={profile.resumeUrl} download>
-              <span className="str">"download_cv.pdf"</span></a>,</p>
+            <p>  <span className="key">"resume"</span>: <a href={profile.resumeUrl} download="Dhruv_Kumar_Boothu_CV.pdf">
+              <span className="str">"Dhruv_Kumar_Boothu_CV.pdf"</span></a>,</p>
             <p>  <span className="key">"status"</span>: <span className="str">"open to work"</span></p>
             <p>{'}'}<span className="typing-cursor"></span></p>
           </div>
