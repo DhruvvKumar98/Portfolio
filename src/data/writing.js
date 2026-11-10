@@ -1,36 +1,26 @@
-const writing = [
+const posts = [
   {
-    title: 'Why I Build Tools for the Other Side of the Market',
-    date: '2026-10',
-    excerpt: 'Zalando has ML models for return prediction. Their seller partners have a spreadsheet. That asymmetry is what drives most of my projects.',
-    tags: ['AI Strategy', 'Product Thinking'],
-    url: '#',
-    source: 'Substack',
+    opening: 'Everyone seems to have an AI opinion right now.',
+    url: 'https://www.linkedin.com/feed/update/urn:li:activity:7438253120079425536/',
   },
   {
-    title: 'The Real Work Is Finding the Right Problem',
-    date: '2026-09',
-    excerpt: 'Ideation is not a phase before the real work. It is the real work. Finding the right problem, framing it for a non-technical operator — that is where the time goes.',
-    tags: ['Business Analysis', 'Process'],
-    url: 'https://www.linkedin.com/in/dhruv-kumar-a54a2916b/recent-activity/articles/',
-    source: 'LinkedIn',
+    opening: 'Two things can be true at once.',
+    url: 'https://www.linkedin.com/feed/update/urn:li:activity:7472988303219232768/',
   },
   {
-    title: 'AI Enablement Is Not AI Replacement',
-    date: '2026-08',
-    excerpt: 'Every "we want AI" brief I have received was really about process clarity. The AI conversation is often the first time a team maps their own workflow.',
-    tags: ['AI Ethics', 'Consulting'],
-    url: 'https://www.linkedin.com/in/dhruv-kumar-a54a2916b/recent-activity/articles/',
-    source: 'LinkedIn',
+    opening: "I've been spending a lot of time lately trying to understand markets rather than just analyse them.",
+    url: 'https://www.linkedin.com/feed/update/urn:li:activity:7458974766708756481/',
   },
   {
-    title: 'Learning German at B1 While Job Searching in Berlin',
-    date: '2026-07',
-    excerpt: 'The language shapes how you think about bureaucracy, directness, and what "professional" means in a culture that books appointments to have coffee.',
-    tags: ['Berlin Life', 'German'],
-    url: '#',
-    source: 'Substack',
+    opening: 'A while back, I found myself reading through company reports from HelloFresh, Spotify, Netflix, and other subscription businesses.',
+    url: 'https://www.linkedin.com/feed/update/urn:li:activity:7467228087420649474/',
+  },
+  {
+    opening: "A few months ago, I completed my Master's thesis and it turned out to be much more personal than I expected.",
+    url: 'https://www.linkedin.com/feed/update/urn:li:activity:7434530877382221824/',
   },
 ];
 
-export default writing;
+export const allPostsUrl = 'https://www.linkedin.com/in/dhruvvkumar/recent-activity/all/';
+
+export default posts;

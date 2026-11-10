@@ -1,78 +1,38 @@
 const skills = [
   {
     group: 'Business Analysis',
-    description:
-      'Core BA toolkit: structuring ambiguous problems, running workshops, and producing specifications that development and analytics teams can act on.',
     items: [
-      'Requirements Engineering',
-      'Functional Specifications',
-      'Workshop Facilitation',
-      'AS-IS / TO-BE Mapping',
-      'BPMN',
-      'Stakeholder Alignment',
-      'Build-vs-Buy Evaluation',
-      'Business Case Development',
-      'Process Optimisation',
+      'Requirements engineering', 'BRD', 'user stories', 'stakeholder management',
+      'workshop facilitation', 'BPMN', 'gap analysis', 'root-cause analysis',
+      'change management', 'UAT',
     ],
   },
   {
-    group: 'Decision & Analytics',
-    description:
-      'Turning data into decisions: KPI frameworks, variance deep-dives, root cause analysis, and executive-ready reporting.',
+    group: 'Strategy & Operations',
     items: [
-      'KPI Design',
-      'Variance Analysis',
-      'Root Cause Analysis',
-      'Scenario Analysis',
-      'Data-to-Business Translation',
-      'UAT Support',
-      'Executive Reporting',
+      'Business cases', 'build-vs-buy evaluation', 'KPI design',
+      'process optimisation', 'unit economics', 'scenario analysis',
     ],
   },
   {
-    group: 'Agile & Delivery',
-    description:
-      'Hands-on delivery experience across Agile cycles — sprint planning, JIRA tracking, and UAT sign-off.',
+    group: 'Data & Reporting',
     items: [
-      'Agile / Scrum',
-      'Sprint Planning',
-      'User Stories',
-      'JIRA',
-      'Confluence',
+      'SQL', 'Python (Pandas)', 'Power BI (DAX, Power Query)', 'Looker Studio',
+      'Tableau', 'Excel (Advanced)', 'A/B testing', 'forecasting', 'data modelling',
     ],
   },
   {
-    group: 'Tools & Reporting',
-    description:
-      'Day-to-day tools for building dashboards, automations, and analysis environments.',
+    group: 'AI & Automation',
     items: [
-      'Power BI',
-      'Tableau',
-      'Excel',
-      'Oracle Fusion Cloud (R13)',
-      'Oracle EBS',
-      'Streamlit',
-      'n8n',
-      'Git',
-      'Jupyter',
-      'VS Code',
+      'AI implementation', 'LLM integration (Claude, MCP)', 'prompt engineering',
+      'AI agents', 'workflow automation', 'n8n', 'Zapier', 'Apps Script', 'API integration',
     ],
   },
   {
-    group: 'Data & AI',
-    description:
-      'Applied data science and AI skills — from SQL and Python to explainable AI and RAG pipelines.',
+    group: 'Tools & Delivery',
     items: [
-      'Python (Pandas, NumPy, scikit-learn)',
-      'SQL',
-      'Explainable AI (SHAP)',
-      'LangChain',
-      'Retrieval-Augmented Generation (RAG)',
-      'Time Series Forecasting',
-      'Predictive Modelling',
-      'Prompt Engineering',
-      'Apache Airflow',
-      'GCP / BigQuery',
+      'Agile/Scrum', 'JIRA', 'Confluence', 'HP ALM', 'Git', 'Docker',
+      'Streamlit', 'FastAPI', 'PostgreSQL', 'Oracle Fusion',
     ],
   },
 ];

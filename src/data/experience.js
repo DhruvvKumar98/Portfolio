@@ -1,122 +1,58 @@
-/**
- * ============================================================
- * EXPERIENCE — src/data/experience.js
- * ============================================================
- *
- * HOW TO ADD A NEW ROLE
- * ─────────────────────
- * Add a new object at the TOP of the array (most recent first).
- * All fields are used — don't skip any.
- *
- * FIELD REFERENCE
- * ─────────────────
- *   role           string   — job title
- *   company        string   — company name and location
- *   dates          string   — e.g. 'Mar 2022 – Mar 2024' or 'Jan 2026 – Present'
- *   context        string   — 1 sentence setting the scene
- *   responsibilities string — 1 sentence summary of what you did day-to-day
- *   impact         array    — specific, quantified bullet points (3-5 recommended)
- *   tools          array    — tools/tech used e.g. ['SQL', 'Power BI', 'Oracle Fusion']
- *   themes         string   — comma-separated themes e.g. 'Data automation, ERP, reporting'
- *   impactSummary  string   — 1 sentence used as the preview on the Home page
- *
- * TEMPLATE — copy from here:
- * ─────────────────────────
- * {
- *   role: 'Your Job Title',
- *   company: 'Company Name | City',
- *   dates: 'Mon YYYY – Mon YYYY',
- *   context: 'One sentence setting the scene for this role.',
- *   responsibilities: 'One sentence describing day-to-day work.',
- *   impact: [
- *     'Specific quantified achievement — e.g. reduced X by Y%.',
- *     'Another achievement with a real number or outcome.',
- *     'Third achievement.',
- *   ],
- *   tools: ['Tool1', 'Tool2', 'Tool3'],
- *   themes: 'Theme one, theme two, theme three',
- *   impactSummary: 'One sentence used as preview on the home page.',
- * },
- * ============================================================
- */
 const experience = [
   {
-    role: 'Independent Consultant – Business & AI Strategy',
-    company: 'Self-employed',
-    dates: 'Sep 2025 – Present',
-    context: 'Worked with SME clients in logistics and finance facing vague "we want AI" briefs.',
-    responsibilities:
-      'Ran requirements workshops and AS-IS process mapping; designed evaluation frameworks; conducted variance and root cause analysis.',
-    impact: [
-      'Consistently scoped vague digital transformation briefs into 2–3 prioritised, actionable opportunities using structured decision frameworks.',
-      'Designed a build-vs-buy evaluation framework for a forecasting use case; delivered a logistics cost dashboard eliminating weekly manual reporting and preventing unnecessary development spend.',
-      'Restructured a finance client\'s exception-tracking process, cutting review meetings from 3 to 1 and freeing 8hrs/month for higher-value analytical work.',
+    role: 'Independent Projects, AI & Automation',
+    company: 'Self-directed, Berlin',
+    dates: 'July 2026 - Present',
+    bullets: [
+      'Shipped Bien Viage Desk, a FastAPI and SQLite operations app for a travel business: 20-document spec, 20-feature MVP, 180+ tests.',
+      'Built an Electron and Ollama email assistant over 2 inboxes with a 4-layer local LLM classifier.',
     ],
-    tools: ['Python', 'Excel', 'Decision Frameworks', 'Process Mapping'],
-    themes: 'Requirements engineering, process optimisation, AI consulting',
-    impactSummary: 'Turned vague digital transformation briefs into structured, scoped action plans — saving clients time and unnecessary dev spend.',
   },
   {
-    role: 'Thesis: XAI Stock Prediction Dashboard',
-    company: 'University of Europe for Applied Sciences | Berlin',
-    dates: 'Sep 2024 – Feb 2025',
-    context: 'M.Sc. Data Science thesis — designed as a decision-support tool, not just a technical exercise.',
-    responsibilities:
-      'Built an end-to-end explainable AI system using LSTM and SHAP DeepExplainer, deployed as a configurable Streamlit app.',
-    impact: [
-      'Surfaced three layers of SHAP-based reasoning per prediction (global feature importance, per-instance waterfall, heatmap) so non-technical stakeholders could interrogate, not just trust, the model.',
-      'Implemented a rigorous 70/15/15 chronological train-val-test split and test-set-only RMSE/MAE evaluation — ensuring honest, reproducible results across different stocks and time periods.',
+    role: 'Freelance Business Analyst, Automation & AI',
+    company: 'Self-employed, Berlin and Remote',
+    dates: 'September 2025 - June 2026',
+    bullets: [
+      'Automated intake, billing and dispatch for a travel SME with n8n, Zapier and Claude, cutting admin from 18h to 7h a week.',
+      'Led a build-vs-buy evaluation for a logistics client and shipped a Power BI cost dashboard, ending manual weekly reporting.',
+      'Built a weekly SKU stock review for a pharma business, enabling data-driven replenishment.',
+      "Supported small Berlin businesses pro bono, including a salon's web page.",
     ],
-    tools: ['Python', 'TensorFlow', 'SHAP', 'Streamlit', 'scikit-learn'],
-    themes: 'Explainable AI, decision support, financial forecasting',
-    impactSummary: 'Built an XAI investment tool where non-technical stakeholders can understand and interrogate every prediction — not just accept a black box.',
   },
   {
-    role: 'Associate Consultant – Functional Business Analyst',
-    company: 'CES Ltd (NTT Global) | India',
-    dates: 'Mar 2022 – Mar 2024',
-    context: 'Embedded with NTT Global finance and procurement teams on Oracle Fusion Cloud data automation and reporting.',
-    responsibilities:
-      'Automated Oracle Fusion data extraction; standardised cross-team metrics; led UAT across 3 Agile delivery cycles.',
-    impact: [
-      'Automated Oracle Fusion Cloud (R13) data extraction across AR, AP, and FA modules — consolidating 15 siloed Excel files into 3 executive dashboards and cutting reporting turnaround by 20%.',
-      'Standardised 12 core metrics across Finance and IT reporting by authoring functional specifications that resolved conflicting definitions, ending recurring reconciliation disputes.',
-      'Diagnosed 18% Q2 cost overrun as a timing artefact from delayed Q1 invoices — presented root cause findings to senior management, preventing a misattributed budget breach and enabling accurate reforecasting.',
-      'Led UAT sign-off across 3 Agile delivery cycles, ensuring zero post-deployment data discrepancies across reporting go-lives.',
-    ],
-    tools: ['Oracle Fusion Cloud R13', 'SQL', 'Power BI', 'Python', 'JIRA', 'Agile'],
-    themes: 'Data automation, executive reporting, finance analytics, ERP',
-    impactSummary: 'Automated Oracle Fusion reporting for NTT Global — cutting planning cycles 20%, eliminating reconciliation overhead, and preventing a misattributed budget breach.',
+    role: 'Part-Time Employment',
+    company: 'SME Berlin GmbH & Co. KG',
+    dates: 'July 2024 - Present',
+    bullets: [],
   },
   {
-    role: 'Trainee – Functional Business Analyst',
-    company: 'CES Ltd (Herber Aircraft Services) | India',
-    dates: 'Jun 2021 – Mar 2022',
-    context: 'Supported Oracle EBS and Fusion Cloud rollout for finance and accounting teams.',
-    responsibilities:
-      'Built SQL validation scripts; documented AS-IS/TO-BE workflows; supported user adoption.',
-    impact: [
-      'Built SQL validation scripts catching configuration errors pre-deployment, reducing post-go-live failures by 10%.',
-      'Produced process documentation adopted into monthly planning cycles across business units.',
+    role: 'Associate Consultant, Functional Business Analyst',
+    company: 'CES Ltd, embedded at NTT Global, Hyderabad, India',
+    dates: 'March 2022 - March 2024',
+    bullets: [
+      'Traced an 18% cost misattribution in Oracle Fusion with SQL root-cause analysis, stopping a wrong budget reallocation.',
+      'Led Finance and IT workshops and BPMN As-Is/To-Be mapping, resolving a 6-month dispute over 4 shared KPIs.',
+      'Replaced 15 Excel reports with 3 Power BI KPI dashboards, cutting reporting from 3 days to 1.',
+      'Owned UAT for 3 Agile releases (BRDs, HP ALM, JIRA), with no critical defects open at go-live.',
     ],
-    tools: ['Oracle EBS', 'Oracle Fusion', 'SQL', 'Excel'],
-    themes: 'ERP implementation, validation, documentation',
-    impactSummary: 'Improved data validation during Oracle Fusion rollout, contributing to on-time deployment with reduced post-go-live failures.',
   },
   {
-    role: 'Early Growth Intern – Strategy & Operations',
-    company: 'XPRS Techno Logistics | India',
-    dates: 'Jul 2020 – Mar 2021',
-    context: 'Assisted early-stage logistics startup with marketing, sales, and operations planning.',
-    responsibilities:
-      'Built campaign performance dashboards; ran cross-functional data analysis for expansion decisions.',
-    impact: [
-      'Built a cross-functional performance tracker linking marketing spend, sign-ups, and delivery cost — giving founders direct ROI visibility by channel for the first time.',
-      'Analysis across marketing, sales, and operations directly informed two new market launch decisions.',
+    role: 'Junior Business Analyst, ERP Implementation',
+    company: 'CES Ltd, client Herber Aircraft Services, Hyderabad, India',
+    dates: 'June 2021 - March 2022',
+    bullets: [
+      'Cut post-go-live incidents ~8% with SQL validation scripts for the Oracle EBS and Fusion rollout.',
+      'Owned UAT scripts and JIRA defect tracking for 2 on-time ERP releases.',
     ],
-    tools: ['Google Sheets', 'Data Analysis'],
-    themes: 'Dashboarding, ROI tracking, market expansion',
-    impactSummary: 'Improved ROI visibility and directly informed two market expansion decisions with unified cross-functional analytics.',
+  },
+  {
+    role: 'Growth & Analytics Intern',
+    company: 'XPRS Techno Logistics, Hyderabad, India',
+    dates: 'July 2020 - March 2021',
+    bullets: [
+      'Built the first 4-channel ROI tracker in Excel, Google Analytics and Looker Studio.',
+      'Analysed demand data to inform two city launches.',
+    ],
   },
 ];
 

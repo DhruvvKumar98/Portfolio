@@ -17,9 +17,7 @@ export default function Nav() {
   const scrollItems = [
     { id: 'projects',   label: 'Work' },
     { id: 'experience', label: 'Experience' },
-    { id: 'status',     label: 'Building' },
-    { id: 'writing',    label: 'Writing' },
-    { id: 'human',      label: 'Human' },
+    { id: 'posts',      label: 'Posts' },
     { id: 'contact',    label: 'Contact' },
   ];
 
