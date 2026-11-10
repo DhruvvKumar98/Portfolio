@@ -102,8 +102,8 @@ function SectionDots() {
 /* ── HERO ─────────────────────────────────────────────── */
 function Hero() {
   return (
-    <section id="hero" style={{ minHeight: '95vh', display: 'flex', alignItems: 'center',
-      padding: '6rem var(--pad-x) 4rem' }}>
+    <section id="hero" style={{ display: 'flex', alignItems: 'center',
+      padding: '7rem var(--pad-x) 4rem', minHeight: 'min(90vh, 800px)' }}>
       <div className="hero-grid" style={{ maxWidth: 'var(--max-w)', margin: '0 auto', width: '100%',
         display: 'grid', gridTemplateColumns: '1.1fr 0.9fr', gap: '4rem', alignItems: 'center' }}>
         <div className="hero-stagger">
